@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+
+        <h1>Add member</h1>
+
+        <form action="addrecord/" method="post">
+        {% csrf_token %}
+
+
+        Name:<br>
+        <input name="name">
+        <br><br>
+
+        Address:<br>
+        <input name="address">
+        <br><br>
+
+        Email:<br>
+        <input name="email">
+        <br><br>
+
+        Position:<br>
+        <input name="position">
+        <br><br>
+
+        Company_id:<br>
+        <select name="Company_id" id="id_Company_id">
+          <option value="">---------</option>
+
+          <option value="1">IT</option>
+
+          <option value="2">BEAUTY</option>
+
+          <option value="3" selected="">SPORT</option>
+
+        </select>
+
+        <input type="submit" value="Submit">
+        </form>
+
+
+
+{% endblock content %}

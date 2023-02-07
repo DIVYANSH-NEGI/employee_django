@@ -1,0 +1,53 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+
+    <h1>Update member</h1>
+
+    <form action="updaterecord/{{ employee.Emp_id }}" method="post">
+    {% csrf_token %}
+
+
+
+        Name:<br>
+        <input name="name" value="{{ employee.name }}">
+        <br><br>
+
+        Address:<br>
+        <input name="address" value="{{ employee.address}}">
+        <br><br>
+
+        Email:<br>
+        <input name="email" value="{{ employee.email }}">
+        <br><br>
+
+        Position:<br>
+        <input name="position" value="{{ employee.position }}">
+        <br><br>
+
+        Company_id:<br>
+        <select name="Company_id" value="{{ employee.Company_id_id }}">
+          <option value="">---------</option>
+
+          <option value="1">IT</option>
+
+          <option value="2">BEAUTY</option>
+
+          <option value="3" selected="">SPORT</option>
+
+        </select>
+    <!-- First Name:<br>
+    <input name="first" value="{{ mymember.firstname }}">
+    <br><br>
+
+    Last Name:<br>
+    <input name="last" value="{{ mymember.lastname }}">
+    <br><br> -->
+
+    <input type="submit" value="Submit">
+    </form>
+
+
+
+{% endblock content %}
